@@ -1,0 +1,14 @@
+from pytube import YouTube
+
+
+def Download(link):
+    youtubeObject = YouTube(link)
+    youtubeObject = youtubeObject.streams.get_audio_only()
+    try:
+        youtubeObject.download()
+    except:
+        print("error")
+    print("Download complete")
+    
+link = input("enter link! URL: ")
+Download(link)
